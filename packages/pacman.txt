@@ -1,0 +1,99 @@
+# Base system packages
+base
+base-devel
+linux
+linux-firmware
+linux-headers
+
+# Boot and firmware
+amd-ucode
+efibootmgr
+dkms
+
+# File systems
+btrfs-progs
+lvm2
+snapper
+smartmontools
+
+# Display server
+xorg-xinit
+xorg-xrandr
+xterm
+
+# Window manager and tools
+i3-wm
+i3blocks
+i3lock
+i3status
+dmenu
+rofi
+polybar
+picom
+feh
+unclutter
+xss-lock
+
+# Display manager
+lightdm
+lightdm-gtk-greeter
+
+# Audio
+pipewire
+pipewire-alsa
+pipewire-jack
+pipewire-pulse
+libpulse
+gst-plugin-pipewire
+wireplumber
+
+# Bluetooth
+bluez
+bluez-utils
+
+# Network
+iwd
+wpa_supplicant
+wireless_tools
+openssh
+
+# Terminals
+warp-terminal
+ghostty
+ghostty-shell-integration
+
+# Editors
+neovim
+vim
+nano
+
+# Development tools
+git
+lazygit
+tree-sitter-cli
+
+# CLI utilities
+htop
+fzf
+fd
+ripgrep
+wget
+
+# Graphics
+nvidia-open-dkms
+libva-nvidia-driver
+
+# Fonts
+ttf-jetbrains-mono-nerd
+
+# Security
+ccid
+
+# Screenshots
+flameshot
+
+# Other
+firefox
+xdg-utils
+sassc
+zram-generator

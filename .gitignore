@@ -1,0 +1,28 @@
+# Backup files
+*.backup
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Sensitive data
+*secret*
+*password*
+*token*
+.env
+
+# Nvim/Vim plugin directories (if you use plugin managers that download)
+config/nvim/plugin/
+config/nvim/.netrwhist
+
+# Cache directories
+config/*/cache/
+config/*/Cache/

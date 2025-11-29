@@ -1,0 +1,97 @@
+configuration {
+    modi: "drun,run,window";
+    show-icons: true;
+    icon-theme: "Papirus";
+    display-drun: "Apps";
+    display-run: "Run";
+    display-window: "Window";
+    drun-display-format: "{name}";
+    font: "monospace 11";
+}
+
+* {
+    /* Nord theme colors */
+    nord0: #2e3440;
+    nord1: #3b4252;
+    nord2: #434c5e;
+    nord3: #4c566a;
+    nord4: #d8dee9;
+    nord5: #e5e9f0;
+    nord6: #eceff4;
+    nord7: #8fbcbb;
+    nord8: #88c0d0;
+    nord9: #81a1c1;
+    nord10: #5e81ac;
+    nord11: #bf616a;
+    
+    background-color: transparent;
+    text-color: @nord6;
+}
+
+window {
+    background-color: @nord0;
+    border: 2px;
+    border-color: @nord8;
+    border-radius: 8px;
+    padding: 15px;
+    width: 600px;
+}
+
+mainbox {
+    background-color: transparent;
+    children: [ inputbar, listview ];
+    spacing: 15px;
+}
+
+inputbar {
+    background-color: @nord1;
+    border: 0px;
+    border-radius: 4px;
+    padding: 10px;
+    spacing: 10px;
+    text-color: @nord6;
+    children: [ prompt, entry ];
+}
+
+prompt {
+    background-color: transparent;
+    text-color: @nord8;
+}
+
+entry {
+    background-color: transparent;
+    placeholder: "Search...";
+    placeholder-color: @nord3;
+}
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 8;
+    spacing: 5px;
+    cycle: false;
+    dynamic: true;
+    scrollbar: false;
+}
+
+element {
+    background-color: transparent;
+    text-color: @nord4;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+element selected {
+    background-color: @nord8;
+    text-color: @nord0;
+}
+
+element-icon {
+    size: 24px;
+    padding: 0px 10px 0px 0px;
+}
+
+element-text {
+    background-color: transparent;
+    text-color: inherit;
+}
