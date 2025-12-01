@@ -89,6 +89,7 @@ fzf
 fd
 ripgrep
 wget
+bat
 
 # Graphics
 nvidia-open-dkms
