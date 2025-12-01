@@ -29,7 +29,7 @@ cp ~/.bash_profile "$DOTFILES_DIR/home/.bash_profile" 2>/dev/null || warn "No .b
 
 # Copy .config directories
 info "Copying .config directories..."
-for config_dir in i3 polybar rofi nvim htop picom ghostty; do
+for config_dir in i3 polybar rofi nvim htop picom ghostty sway waybar; do
     if [ -d ~/.config/$config_dir ]; then
         # Remove the old directory and copy fresh
         rm -rf "$DOTFILES_DIR/config/$config_dir"

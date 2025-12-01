@@ -105,6 +105,21 @@ if [ ! -f ~/.xinitrc ]; then
     echo "exec i3" > ~/.xinitrc
 fi
 
+# Install sway-nvidia launcher script
+if [ -f "$DOTFILES_DIR/scripts/sway-nvidia" ]; then
+    info "Installing sway-nvidia launcher..."
+    mkdir -p ~/.local/bin
+    cp "$DOTFILES_DIR/scripts/sway-nvidia" ~/.local/bin/sway-nvidia
+    chmod +x ~/.local/bin/sway-nvidia
+fi
+
+# Install sway desktop entry for display manager
+if [ -f "$DOTFILES_DIR/wayland-sessions/sway-nvidia.desktop" ]; then
+    info "Installing sway desktop entry..."
+    mkdir -p ~/.local/share/wayland-sessions
+    cp "$DOTFILES_DIR/wayland-sessions/sway-nvidia.desktop" ~/.local/share/wayland-sessions/sway-nvidia.desktop
+fi
+
 # Enable and start services
 info "Enabling services..."
 sudo systemctl enable lightdm.service

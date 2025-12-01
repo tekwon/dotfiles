@@ -34,6 +34,17 @@ feh
 unclutter
 xss-lock
 
+# Wayland compositor (Sway)
+sway
+swaybg
+swayidle
+swaylock
+waybar
+grim
+slurp
+xorg-xwayland
+egl-wayland
+
 # Display manager
 lightdm
 lightdm-gtk-greeter
@@ -85,6 +96,7 @@ libva-nvidia-driver
 
 # Fonts
 ttf-jetbrains-mono-nerd
+otf-font-awesome
 
 # Security
 ccid
