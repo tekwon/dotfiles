@@ -24,9 +24,9 @@ output * scale 1.5
 
 # Configure displays (Wayland equivalent of xrandr)
 # To find output names, run: swaymsg -t get_outputs
-# HDMI rotated 90° becomes 960 wide (1440/1.5 scaling)
-output HDMI-A-1 mode 2560x1440@59.951Hz transform 90 pos 0 0
-output DP-1 mode 3840x2160@59.997Hz pos 960 0
+# HDMI rotated 90° is 1440 wide (no scaling)
+output HDMI-A-1 mode 2560x1440@59.951Hz transform 90 pos 0 0 scale 1
+output DP-1 mode 3840x2160@59.997Hz pos 1440 0
 
 # Set wallpaper
 output * bg /home/detect/Pictures/wallpapers/purple_horiz.jpg fill
