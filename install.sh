@@ -99,19 +99,53 @@ for dotfile in "$DOTFILES_DIR/home/".??*; do
     fi
 done
 
+# Copy .local directory structure (scripts, desktop files, etc.)
+if [ -d "$DOTFILES_DIR/home/.local" ]; then
+    info "Setting up .local directory..."
+    
+    # Copy scripts to ~/.local/bin
+    if [ -d "$DOTFILES_DIR/home/.local/bin" ]; then
+        mkdir -p ~/.local/bin
+        for script in "$DOTFILES_DIR/home/.local/bin/"*; do
+            if [ -f "$script" ]; then
+                cp "$script" ~/.local/bin/
+                chmod +x ~/.local/bin/$(basename "$script")
+                info "Installed script: $(basename "$script")"
+            fi
+        done
+    fi
+    
+    # Copy .desktop files to ~/.local/share/applications
+    if [ -d "$DOTFILES_DIR/home/.local/share/applications" ]; then
+        mkdir -p ~/.local/share/applications
+        for desktop_file in "$DOTFILES_DIR/home/.local/share/applications/"*.desktop; do
+            if [ -f "$desktop_file" ]; then
+                cp "$desktop_file" ~/.local/share/applications/
+                info "Installed desktop file: $(basename "$desktop_file")"
+            fi
+        done
+    fi
+fi
+
+# Also install scripts from scripts/ directory to ~/.local/bin
+if [ -d "$DOTFILES_DIR/scripts" ]; then
+    info "Installing utility scripts..."
+    mkdir -p ~/.local/bin
+    for script in "$DOTFILES_DIR/scripts/"*; do
+        if [ -f "$script" ]; then
+            cp "$script" ~/.local/bin/
+            chmod +x ~/.local/bin/$(basename "$script")
+            info "Installed: $(basename "$script")"
+        fi
+    done
+fi
+
 # Create .xinitrc if it doesn't exist
 if [ ! -f ~/.xinitrc ]; then
     info "Creating .xinitrc..."
     echo "exec i3" > ~/.xinitrc
 fi
 
-# Install sway-nvidia launcher script
-if [ -f "$DOTFILES_DIR/scripts/sway-nvidia" ]; then
-    info "Installing sway-nvidia launcher..."
-    mkdir -p ~/.local/bin
-    cp "$DOTFILES_DIR/scripts/sway-nvidia" ~/.local/bin/sway-nvidia
-    chmod +x ~/.local/bin/sway-nvidia
-fi
 
 # Install sway desktop entry for display manager
 if [ -f "$DOTFILES_DIR/wayland-sessions/sway-nvidia.desktop" ]; then

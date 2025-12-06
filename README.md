@@ -11,11 +11,39 @@ Supports both **i3** (X11) and **Sway** (Wayland) window managers.
 - Internet connection
 - For NVIDIA GPUs: nvidia-open-dkms driver recommended
 
-## Installation
+## Quick Start Installation
+
+For a fresh Arch install, use this streamlined process:
+
+### 1. During archinstall
+- Select **minimal** or **base** profile
+- Ensure **git** is included in additional packages
+- Create your user account
+- Complete installation and reboot
+
+### 2. After first boot
+```bash
+# Clone dotfiles
+git clone https://github.com/tekwon/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+
+# Run installation script
+chmod +x install.sh
+./install.sh
+
+# Reboot or restart display manager
+sudo systemctl restart lightdm
+```
+
+That's it! The script will install everything (i3, Sway, all packages, configs, scripts).
+
+## Manual Installation
+
+If you already have a configured system:
 
 1. Clone this repository:
 ```bash
-git clone <your-repo-url> ~/dotfiles
+git clone https://github.com/tekwon/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 ```
 
@@ -49,9 +77,15 @@ dotfiles/
 │   └── ...
 ├── home/                  # Home directory dotfiles
 │   ├── .bashrc
-│   └── ...
-├── scripts/               # Utility scripts
-│   └── sway-nvidia       # Sway launcher for NVIDIA GPUs
+│   ├── .bash_profile
+│   └── .local/
+│       ├── bin/          # User scripts
+│       └── share/
+│           └── applications/  # Custom .desktop files
+├── scripts/               # Utility scripts (copied to ~/.local/bin)
+│   ├── sway-nvidia       # Sway launcher for NVIDIA GPUs
+│   ├── set-wallpaper     # Wallpaper script
+│   └── gparted-wrapper   # GParted launcher
 └── wayland-sessions/      # Display manager session files
     └── sway-nvidia.desktop
 ```
@@ -61,9 +95,10 @@ dotfiles/
 - All packages listed in `packages/pacman.txt` and `packages/aur.txt`
 - Both i3 and Sway window managers
 - Configuration files symlinked to their proper locations
-- Sway-nvidia launcher script (for NVIDIA GPUs)
+- Custom scripts copied to `~/.local/bin`
+- Custom `.desktop` files copied to `~/.local/share/applications`
 - System services enabled (lightdm, bluetooth, iwd)
-- AUR helper (yay) if not already installed
+- AUR helper (yay or paru) if not already installed
 
 ## Customization
 
