@@ -169,6 +169,19 @@ if [ -f "$DOTFILES_DIR/wayland-sessions/sway-nvidia.desktop" ]; then
     cp "$DOTFILES_DIR/wayland-sessions/sway-nvidia.desktop" ~/.local/share/wayland-sessions/sway-nvidia.desktop
 fi
 
+# Configure LightDM greeter to use Tokyonight theme
+info "Configuring LightDM theme..."
+if [ -f /etc/lightdm/lightdm-gtk-greeter.conf ]; then
+    # Check if theme-name is already set
+    if ! grep -q "^theme-name=" /etc/lightdm/lightdm-gtk-greeter.conf; then
+        # Add theme configuration after [greeter] section
+        sudo sed -i '/^\[greeter\]/a theme-name=Tokyonight-Dark\nicon-theme-name=Adwaita' /etc/lightdm/lightdm-gtk-greeter.conf
+        info "LightDM theme configured"
+    else
+        info "LightDM theme already configured"
+    fi
+fi
+
 # Enable and start services
 info "Enabling services..."
 sudo systemctl enable lightdm.service
