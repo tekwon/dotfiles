@@ -3,3 +3,4 @@
 paru-bin
 otf-apple-sf-pro
 opencode-bin
+warp-terminal

@@ -32,6 +32,15 @@ if [ "$EUID" -eq 0 ]; then
     exit 1
 fi
 
+# Enable multilib repository for 32-bit packages (needed for Steam, etc.)
+info "Enabling multilib repository..."
+if ! grep -q "^\[multilib\]" /etc/pacman.conf; then
+    sudo sed -i '/^#\[multilib\]/,/^#Include/ s/^#//' /etc/pacman.conf
+    info "Multilib repository enabled"
+else
+    info "Multilib repository already enabled"
+fi
+
 # Update system
 info "Updating system..."
 sudo pacman -Syu --noconfirm

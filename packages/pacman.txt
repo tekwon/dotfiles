@@ -75,7 +75,6 @@ wireless_tools
 openssh
 
 # Terminals
-warp-terminal
 ghostty
 ghostty-shell-integration
 
