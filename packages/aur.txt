@@ -2,3 +2,4 @@
 # Add your AUR packages here, one per line
 paru-bin
 otf-apple-sf-pro
+opencode-bin

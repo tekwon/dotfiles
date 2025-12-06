@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Simple wallpaper setter script
+
+if [ -z "$1" ]; then
+    echo "Usage: set-wallpaper <image-path>"
+    echo "Current wallpaper will be updated in i3 config"
+    exit 1
+fi
+
+WALLPAPER_PATH=$(realpath "$1")
+
+if [ ! -f "$WALLPAPER_PATH" ]; then
+    echo "Error: File not found: $WALLPAPER_PATH"
+    exit 1
+fi
+
+# Set the wallpaper immediately
+feh --bg-fill "$WALLPAPER_PATH"
+
+# Update i3 config
+I3_CONFIG="$HOME/.config/i3/config"
+sed -i "s|feh --bg-fill.*|feh --bg-fill $WALLPAPER_PATH|" "$I3_CONFIG"
+
+echo "Wallpaper set to: $WALLPAPER_PATH"
+echo "Updated i3 config"

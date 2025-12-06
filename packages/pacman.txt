@@ -15,6 +15,11 @@ btrfs-progs
 lvm2
 snapper
 smartmontools
+ddrescue
+dosfstools
+exfatprogs
+ntfs-3g
+xfsprogs
 
 # Display server
 xorg-xinit
@@ -57,6 +62,7 @@ pipewire-pulse
 libpulse
 gst-plugin-pipewire
 wireplumber
+pamixer
 
 # Bluetooth
 bluez
@@ -80,8 +86,10 @@ nano
 
 # Development tools
 git
+github-cli
 lazygit
 tree-sitter-cli
+uv
 
 # CLI utilities
 htop
@@ -90,6 +98,8 @@ fd
 ripgrep
 wget
 bat
+tldr
+man-db
 
 # Graphics
 nvidia-open-dkms
@@ -97,7 +107,10 @@ libva-nvidia-driver
 
 # Fonts
 ttf-jetbrains-mono-nerd
+ttf-nerd-fonts-symbols-mono
 otf-font-awesome
+woff2-font-awesome
+noto-fonts-emoji
 
 # Security
 ccid
@@ -105,8 +118,20 @@ ccid
 # Screenshots
 flameshot
 
+# File manager
+thunar
+thunar-archive-plugin
+thunar-volman
+gvfs
+udisks2
+polkit-gnome
+
+# Disk utilities
+gparted
+
 # Other
 firefox
 xdg-utils
 sassc
 zram-generator
+steam

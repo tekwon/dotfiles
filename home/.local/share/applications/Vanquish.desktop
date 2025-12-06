@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Vanquish
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/460810
+Icon=steam_icon_460810
+Terminal=false
+Type=Application
+Categories=Game;

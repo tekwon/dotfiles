@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Virtua Fighter 5 R.E.V.O. World Stage
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/3112260
+Icon=steam_icon_3112260
+Terminal=false
+Type=Application
+Categories=Game;
