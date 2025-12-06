@@ -99,6 +99,14 @@ for dotfile in "$DOTFILES_DIR/home/".??*; do
     fi
 done
 
+# Copy Pictures directory (wallpapers, etc.)
+if [ -d "$DOTFILES_DIR/home/Pictures" ]; then
+    info "Setting up Pictures directory..."
+    mkdir -p ~/Pictures
+    cp -r "$DOTFILES_DIR/home/Pictures/"* ~/Pictures/
+    info "Copied Pictures directory"
+fi
+
 # Copy .local directory structure (scripts, desktop files, etc.)
 if [ -d "$DOTFILES_DIR/home/.local" ]; then
     info "Setting up .local directory..."
