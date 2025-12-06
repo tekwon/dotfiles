@@ -41,7 +41,7 @@ sudo pacman -Syu --noconfirm
 # Install packages from official repositories
 info "Installing packages from official repositories..."
 if [ -f "$DOTFILES_DIR/packages/pacman.txt" ]; then
-    sudo pacman -S --needed --noconfirm $(grep -vE "^\s*#" "$DOTFILES_DIR/packages/pacman.txt" | tr '\n' ' ')
+    sudo pacman -S --needed --noconfirm $(grep -vE "^\s*#" "$DOTFILES_DIR/packages/pacman.txt" | grep -vE "^\s*$" | tr '\n' ' ')
 else
     warn "No pacman.txt found, skipping official packages"
 fi
@@ -62,7 +62,7 @@ fi
 if [ -f "$DOTFILES_DIR/packages/aur.txt" ] && [ -s "$DOTFILES_DIR/packages/aur.txt" ]; then
     info "Installing AUR packages..."
     AUR_HELPER=$(command -v yay || command -v paru)
-    $AUR_HELPER -S --needed --noconfirm $(grep -vE "^\s*#" "$DOTFILES_DIR/packages/aur.txt" | tr '\n' ' ')
+    $AUR_HELPER -S --needed --noconfirm $(grep -vE "^\s*#" "$DOTFILES_DIR/packages/aur.txt" | grep -vE "^\s*$" | tr '\n' ' ')
 else
     info "No AUR packages to install"
 fi
