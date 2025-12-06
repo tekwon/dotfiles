@@ -4,8 +4,6 @@
 # Assumes base Arch Linux with i3 already installed
 #
 
-set -e
-
 # Colors for output
 RED='\033[0;31m'
 GREEN='\033[0;32m'
