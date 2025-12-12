@@ -126,7 +126,7 @@ The install script automatically backs up any existing configuration files with 
 
 ## NVIDIA + Wayland Setup
 
-For NVIDIA GPUs running Sway/Wayland:
+For NVIDIA GPUs running Sway/Wayland (10 series cards require --unsupported-gpu):
 
 1. The install script sets up a custom sway launcher (`~/.local/bin/sway-nvidia`) that runs:
    ```bash
