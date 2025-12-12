@@ -1,0 +1,3 @@
+#!/bin/bash
+# Steam wrapper that prevents screen lock while running
+systemd-inhibit --what=idle --who="Steam" --why="Gaming session" steam

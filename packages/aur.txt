@@ -4,3 +4,4 @@ paru-bin
 otf-apple-sf-pro
 opencode-bin
 warp-terminal
+tokyonight-gtk-theme-git

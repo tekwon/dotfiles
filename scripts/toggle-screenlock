@@ -1,0 +1,13 @@
+#!/bin/bash
+# Toggle swayidle (screen lock) on/off
+
+if pgrep -x swayidle > /dev/null; then
+    killall swayidle
+    notify-send "Screen Lock" "Screen lock disabled" -u normal -t 2000
+else
+    swayidle -w \
+        timeout 300 'swaylock -f -c 000000' \
+        timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+        before-sleep 'swaylock -f -c 000000' &
+    notify-send "Screen Lock" "Screen lock enabled" -u normal -t 2000
+fi
