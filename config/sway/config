@@ -19,14 +19,17 @@ font pango:monospace 8
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
 
-# HiDPI scaling for 4K display (adjust as needed: 1.5 or 2)
-output * scale 1.5
-
 # Configure displays (Wayland equivalent of xrandr)
 # To find output names, run: swaymsg -t get_outputs
-# HDMI rotated 90° is 1440 wide (no scaling)
-output HDMI-A-1 mode 2560x1440@59.951Hz transform 90 pos 0 0 scale 1
-output DP-1 mode 3840x2160@59.997Hz pos 1440 0
+
+# === ULTRAWIDE SETUP (Current) ===
+output DP-2 mode 5120x1440@120.000Hz pos 0 0 scale 1.25
+
+# === DUAL MONITOR SETUP (Previous PC) ===
+# Uncomment these and comment out ultrawide setup above to use dual monitors
+# output * scale 1.5
+# output HDMI-A-1 mode 2560x1440@59.951Hz transform 90 pos 0 0 scale 1
+# output DP-1 mode 3840x2160@59.997Hz pos 1440 0
 
 # Set wallpaper
 output * bg /home/detect/Pictures/wallpapers/purple_horiz.jpg fill
